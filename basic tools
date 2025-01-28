@@ -105,4 +105,7 @@ Miscellaneous Tools
           ■ -f = format of the payload
           ■ -o = output dir
         ○ Start reverse shell: use exploit/multi/handler
+Other
+      whatweb <fqdn>
+
         
