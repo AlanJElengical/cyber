@@ -144,3 +144,8 @@ For checking loadbalancers
 For cracking MD5 hashes
       https://hashes.com/en/decrypt/hash
 
+To scan networks 
+      nmap -p 21 172.16.0.0/24
+      nmap -p 21 10.10.10.0/24
+      nmap -p 21 192.168.0.0/24
+
